@@ -70,7 +70,7 @@ function(input, output, session) {
       "contrast.txt"
     },
     content = function(file) {
-      write.table(rv$combinations, file, row.names = FALSE, col.names = TRUE, sep = "\t")
+      write.table(rv$combinations, file, row.names = FALSE, col.names = FALSE, sep = "\t")
     }
   )
 }
