@@ -14,7 +14,7 @@ fluidPage(
       DT::dataTableOutput("table"),
       actionButton("swap", "Swap Selected Combination(s)"),
       actionButton("remove", "Remove Selected Combination(s)"),
-      downloadButton("contrast", "Download contrast.txt"),
+      downloadButton(ns("contrast"), "Download contrast.txt"),
       verbatimTextOutput("output_text")
     )
   )
