@@ -64,7 +64,7 @@ function(input, output, session) {
   # Render DataTable
   output$table <- renderDataTable({
     rv$combinations
-  })
+  }, rownames = FALSE)
   
   # Download button handler
   output$downloadData <- downloadHandler(
