@@ -2,7 +2,7 @@ library(shiny)
 
 # Workaround for Chromium Issue 468227
 downloadButton <- function(...) {
-  tag <- shiny::downloadButton(...)
+  tag <- shiny::downloadButton("contrast", "Download contrast.txt")
   tag$attribs$download <- NULL
   tag}
 
@@ -25,3 +25,4 @@ fluidPage(
     )
   )
 )
+
