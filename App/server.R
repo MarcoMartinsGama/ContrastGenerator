@@ -4,6 +4,13 @@ if (!requireNamespace("data.table", quietly = TRUE)) install.packages("data.tabl
 library(data.table)
 library(DT)
 
+# Workaround for Chromium Issue 468227
+downloadButton <- function(...) {
+  tag <- shiny::downloadButton(...)
+  tag$attribs$download <- NULL
+  tag
+}
+
 function(input, output, session) {
   # Reactive value to store conditions and combinations
   rv <- reactiveValues(conditions = character(), combinations = data.frame(Combination = character()))
