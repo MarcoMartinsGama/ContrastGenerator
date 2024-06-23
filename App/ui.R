@@ -1,5 +1,11 @@
 library(shiny)
 
+# Workaround for Chromium Issue 468227
+downloadButton <- function(...) {
+  tag <- shiny::downloadButton(...)
+  tag$attribs$download <- NULL
+  tag}
+
 fluidPage(
   titlePanel("Contrast.txt Generator"),
   sidebarLayout(
