@@ -1,8 +1,8 @@
 library(shiny)
-
+library(data.table)
 
 function(input, output, session) {
-  library(DT)
+
   
   
   # Reactive value to store conditions and combinations
@@ -64,9 +64,9 @@ function(input, output, session) {
   })
   
   # Render DataTable
-  output$table <- renderDT({
+  output$table <- renderDataTable({
     rv$combinations
-  }, selection = 'multiple')
+  })
   
   # Download button handler
   output$downloadData <- downloadHandler(
