@@ -77,6 +77,6 @@ function(input, output, session) {
     content = function(file) {
       write.table(rv$combinations, file, row.names = FALSE, col.names = FALSE, sep = "\t")
     },
-    contentType = function(){ "text/plain"}  # Ensure contentType is set to text/plain
+    contentType = "text/plain"  # Ensure contentType is set to text/plain
   )
 }
