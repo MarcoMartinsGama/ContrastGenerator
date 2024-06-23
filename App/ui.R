@@ -1,5 +1,7 @@
 library(shiny)
 
+ 
+# Ensures correct downloading on website
 downloadButton <- function(...) {
   tag <- shiny::downloadButton("contrast", "Download contrast.txt")
   tag$attribs$download <- NULL
