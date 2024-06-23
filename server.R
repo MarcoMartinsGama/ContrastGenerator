@@ -1,4 +1,5 @@
 library(shiny)
+if (!requireNamespace("data.table", quietly = TRUE)) install.packages("data.table")
 library(data.table)
 
 function(input, output, session) {
