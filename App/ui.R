@@ -11,7 +11,7 @@ fluidPage(
       actionButton("generate", "Generate Combination(s)")
     ),
     mainPanel(
-      dataTableOutput("table"),
+      DT::dataTableOutput("table"),
       actionButton("swap", "Swap Selected Combination(s)"),
       actionButton("remove", "Remove Selected Combination(s)"),
       downloadButton("downloadData", "Download contrast.txt"),
