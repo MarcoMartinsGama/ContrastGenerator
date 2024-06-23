@@ -1,6 +1,9 @@
 library(shiny)
 
-
+downloadButton <- function(...) {
+  tag <- shiny::downloadButton("contrast", "Download contrast.txt")
+  tag$attribs$download <- NULL
+  tag}
 
 fluidPage(
   titlePanel("Contrast.txt Generator"),
@@ -16,10 +19,7 @@ fluidPage(
       DT::dataTableOutput("table"),
       actionButton("swap", "Swap Selected Combination(s)"),
       actionButton("remove", "Remove Selected Combination(s)"),
-      downloadButton <- function(...) {
-        tag <- shiny::downloadButton("contrast", "Download contrast.txt")
-        tag$attribs$download <- NULL
-        tag},
+      downloadButton("contrast","Download contrast.txt"),
       verbatimTextOutput("output_text")
     )
   )
