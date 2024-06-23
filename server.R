@@ -2,13 +2,10 @@ library(shiny)
 library(data.table)
 
 function(input, output, session) {
-
-  
-  
   # Reactive value to store conditions and combinations
   rv <- reactiveValues(conditions = character(), combinations = data.frame(Combination = character()))
   
-  # Read file and extract conditions
+  # Read keys.txt and extract conditions from condition column
   observeEvent(input$file, {
     req(input$file)
     data <- read.table(input$file$datapath, header = TRUE, sep = "\t")
@@ -27,7 +24,7 @@ function(input, output, session) {
     }
   })
   
-  # Generate combinations
+  # Generate combinations in contrqst.txt
   observeEvent(input$generate, {
     selected_conditions <- input$conditions
     if (length(selected_conditions) > 1) {
