@@ -69,9 +69,11 @@ function(input, output, session) {
   })
   
   # Download button handler
+  outputOptions(output, "contrast", suspendWhenHidden = FALSE)
   output$contrast <- downloadHandler(
     filename = function() {
       "contrast.txt"
+      
     },
     content = function(file) {
       write.table(rv$combinations, file, row.names = FALSE, col.names = FALSE, sep = "\t")
