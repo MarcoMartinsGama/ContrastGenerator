@@ -1,10 +1,6 @@
 library(shiny)
 
-# Workaround for Chromium Issue 468227
-downloadButton <- function(...) {
-  tag <- shiny::downloadButton("contrast", "Download contrast.txt")
-  tag$attribs$download <- NULL
-  tag}
+
 
 fluidPage(
   titlePanel("Contrast.txt Generator"),
@@ -20,7 +16,10 @@ fluidPage(
       DT::dataTableOutput("table"),
       actionButton("swap", "Swap Selected Combination(s)"),
       actionButton("remove", "Remove Selected Combination(s)"),
-      downloadButton("contrast", "Download contrast.txt"),
+      downloadButton <- function(...) {
+        tag <- shiny::downloadButton("contrast", "Download contrast.txt")
+        tag$attribs$download <- NULL
+        tag},
       verbatimTextOutput("output_text")
     )
   )
