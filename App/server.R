@@ -69,7 +69,7 @@ function(input, output, session) {
   })
   
   # Download button handler
-  outputOptions(output, "contrast", suspendWhenHidden = FALSE)
+ 
   output$contrast <- downloadHandler(
     filename = function() {
       "contrast.txt"
