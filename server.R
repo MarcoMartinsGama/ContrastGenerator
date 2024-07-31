@@ -1,6 +1,7 @@
 library(shiny)
 if (!requireNamespace("data.table", quietly = TRUE)) install.packages("data.table")
-library(data.table)
+if (!requireNamespace("DT", quietly = TRUE)) install.packages("DT")
+library(DT)
 
 function(input, output, session) {
   # Reactive value to store conditions and combinations
